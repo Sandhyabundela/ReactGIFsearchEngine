@@ -1,0 +1,218 @@
+
+/* Base Styles */
+
+:root {
+    font-size: 10px;
+}
+
+:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.3rem #93f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    min-height: 100vh;
+    color: #fcfcfc;
+    background: #d7eaf1;
+    text-align: center;
+}
+
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 9rem;
+}
+
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.4rem solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 400ms linear infinite;
+}
+
+img {
+    display: block;
+}
+
+/* Header */
+
+header {
+    background-color: #111;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1.4;
+    padding: 3rem 2rem;
+}
+
+h1 span {
+    white-space: nowrap;
+}
+
+.giphy-logo {
+    font-weight: 800;
+}
+
+/* Search Input */
+
+.gif-search-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gif-search-label {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #0f7fa9;
+}
+
+.gif-search-input {
+    font-family: inherit;
+    font-size: 2rem;
+    width: 25rem;
+    max-width: 100%;
+    height: 3.5rem;
+    background-color: #fcfcfc;
+    color: #111;
+    border: none;
+    border-radius: 0.8rem;
+    margin: 1.5rem 1.5rem 3rem;
+    text-align: center;
+}
+
+/* Search Output */
+
+.gifs-output {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 3rem;
+    margin: -1rem -1rem;
+}
+
+.gif-container {
+    flex: 1 0 22rem;
+    margin: 1rem;
+    animation: fadeInUp 1s;
+}
+
+.gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16), 0 0.3rem 0.6rem rgba(0, 0, 0, 0.23);
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    padding: 2.2rem;
+    background-color: #111;
+}
+
+/* Grid Feature Query */
+
+@supports (display: grid) {
+    .gifs-output {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 2rem;
+    }
+    .gifs-output,
+    .gif-container {
+        margin: 0;
+    }
+}
+
+/* Loader Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade Up Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #d7eaf1;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #098ea9;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #2c7dbd;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #2c7dbd;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #2c7dbd;
+  background: #2c7dbd;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+Resize the wrap to see the search bar change!
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
